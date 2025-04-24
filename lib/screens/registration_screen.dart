@@ -36,20 +36,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               controller: emailController,
               decoration: const InputDecoration(labelText: "Email Address"),
             ),
+
             const SizedBox(
               height: 30,
             ),
+
+            
             GestureDetector(
               onTap: () {
                 setState(() {
                   isRegistered = !isRegistered;
                 });
               },
+              
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                    color: isRegistered ? Colors.green : Colors.blue,
                     borderRadius: BorderRadius.circular(10),
+                    color: isRegistered ? Colors.green : Colors.blue,
                 ),
                 child: Text(
                     isRegistered ? "Registration Successful" : "Register me",
@@ -62,13 +66,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),  
 
             const SizedBox(height: 30,),
+
             if(isRegistered)
+
             ElevatedButton(onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(
                     firstname: firstNameController.text,
                     lastname: lastNameController.text,
                     email: emailController.text
-                )
+                ),
                 )
                  );
             }, 
